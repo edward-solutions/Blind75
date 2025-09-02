@@ -7,19 +7,23 @@ using Xunit;
 
 namespace Blind75.Tests
 {
-    public class ContainsDuplicateTests
+    public class ValidAnagramsTests
     {
+       
+
         [Fact]
         public void ReturnsTrue_WhenArrayHasDuplicates()
         {
-            int[] nums = new int[] { 1, 2, 3, 1 };
-            Assert.True(ContainsDuplicate.Solution(nums));
+            string s = "anagram";
+            string t = "nagaram";
+            Assert.True(ValidAnagram.Solution(s,t));
         }
         [Fact]
         public void ReturnsTrue_WhenArrayHasDuplicatesTop1()
         {
-            int[] nums = new int[] { 1, 2, 3, 1 };
-            Assert.True(ContainsDuplicate.Solution_Leetcode(nums));
+            string s = "anagram";
+            string t = "nagaram";
+            Assert.True(ValidAnagram.Solution_Leetcode(s,t));
         }
     }
 }

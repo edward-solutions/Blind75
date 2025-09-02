@@ -4,5 +4,6 @@ public static class Program
 {
     public static void Main(string[] args)
     {
+        ValidAnagram.Solution("anagram1", "nagarams");
     }
 }

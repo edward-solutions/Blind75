@@ -21,10 +21,9 @@
 // 1 <= nums.length <= 10^5
 // -10^9 <= nums[i] <= 10^9
 
-
-public static class Solution
+public static class ContainsDuplicate
 {
-    public static bool ContainsDuplicate(int[] nums)
+    public static bool Solution(int[] nums)
     {
         HashSet<int> ints = new HashSet<int>();
         foreach (int num in nums)
@@ -34,7 +33,7 @@ public static class Solution
         return nums.Length != ints.Count;
     }
 
-    public static bool ContainsDuplicateTop1(int[] nums)
+    public static bool Solution_Leetcode(int[] nums)
     {
         return new HashSet<int>(nums).Count < nums.Length;
     }
