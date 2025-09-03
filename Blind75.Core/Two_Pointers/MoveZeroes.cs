@@ -2,7 +2,7 @@
 
 //[1,0,0,3,12]
 
-namespace Blind75.Core.Arrays_and_Hashing
+namespace Blind75.Core.Two_Pointers
 {
     public static class MoveZeroes
     {
