@@ -15,11 +15,11 @@ namespace Blind75.Tests
             int[] nums = new int[] { 1, 2, 3, 1 };
             Assert.True(ContainsDuplicate.Solution(nums));
         }
-        //[Fact]
-        //public void ReturnsTrue_WhenArrayHasDuplicatesTop1()
-        //{
-        //    int[] nums = new int[] { 1, 2, 3, 1 };
-        //    Assert.True(ContainsDuplicate.Solution_Leetcode(nums));
-        //}
+        [Fact]
+        public void ReturnsTrue_WhenArrayHasDuplicatesTop1()
+        {
+            int[] nums = new int[] { 1, 2, 3, 1 };
+            Assert.True(ContainsDuplicate.Solution_Leetcode(nums));
+        }
     }
 }

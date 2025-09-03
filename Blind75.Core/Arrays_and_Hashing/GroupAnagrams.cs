@@ -12,22 +12,43 @@ namespace Blind75.Core.Arrays_and_Hashing
     {
         public static IList<IList<string>> Solution(string[] strs)
         {
-            //edge cases
-            if (strs.Length == 0) return new List<IList<string>>();
-            if (strs.Length == 1) return new List<IList<string>> { new List<string> { strs[0] } };
-
             Dictionary<string, List<string>> hashTable = new Dictionary<string, List<string>>();
-
-            foreach (var word in strs)
+            for (int i = 0; i < strs.Length; i++)
             {
-                char[] chars = word.ToCharArray();
+                char[] chars = strs[i].ToCharArray();
                 Array.Sort(chars);
                 string key = new string(chars);
+
+                //if key is not in hashtable, add a new instance of the list 
                 if (!hashTable.ContainsKey(key))
                 {
                     hashTable[key] = new List<string>();
                 }
-                hashTable[key].Add(word);
+
+                hashTable[key].Add(strs[i]);
+            }
+
+            return hashTable.Values.ToList<IList<string>>();
+        }
+
+        public static IList<IList<string>> SolutionChatGpt(string[] strs)
+        {
+            Dictionary<string, List<string>> hashTable = new Dictionary<string, List<string>>();
+
+            foreach (var str in strs)
+            {
+                // Count frequency of each character (assume lowercase a-z)
+                int[] count = new int[26];
+                foreach (char c in str)
+                    count[c - 'a']++;
+
+                // Convert count array to a string key
+                string key = string.Join("#", count); // "#" avoids ambiguity
+
+                if (!hashTable.ContainsKey(key))
+                    hashTable[key] = new List<string>();
+
+                hashTable[key].Add(str);
             }
 
             return hashTable.Values.ToList<IList<string>>();
