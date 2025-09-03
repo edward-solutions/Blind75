@@ -1,14 +1,25 @@
-﻿public static class TwoSum
+﻿//https://leetcode.com/problems/two-sum/
+
+//Input: nums = [2, 7, 11, 15], target = 9
+
+//Output: [0, 1]
+public static class TwoSum
 {
     public static int[] Solution(int[] nums, int target)
     {
-        Dictionary<int, int> keyValuePairs = new Dictionary<int, int>();
-
+        Dictionary<int, int> hashTable = new Dictionary<int, int>();
         for(int i = 0; i < nums.Length; i++)
         {
-            var complement = target - nums[i];
-            if (keyValuePairs.ContainsKey(complement)) return [i, keyValuePairs[complement]];
-            if (!keyValuePairs.ContainsKey(nums[i])) keyValuePairs.Add(nums[i], i);
+            int complement = target - nums[i];
+            if (hashTable.ContainsKey(complement))
+            {
+                return [i, hashTable[complement]];
+            }
+            if (!hashTable.ContainsKey(nums[i]))
+            {
+                //add to hashtable [nums[i], i]
+                hashTable.Add(nums[i], i);
+            }
         }
         return [0, 0];
     }
