@@ -25,12 +25,7 @@ public static class ContainsDuplicate
 {
     public static bool Solution(int[] nums)
     {
-        HashSet<int> ints = new HashSet<int>();
-        foreach (int num in nums)
-        {
-            ints.Add(num);
-        }
-        return nums.Length != ints.Count;
+        return new HashSet<int>(nums).Count != nums.Length;
     }
 
     public static bool Solution_Leetcode(int[] nums)
