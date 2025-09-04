@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blind75.Core.Arrays_and_Hashing
 {
-    public class FirstUniqueString
+    public class FirstUniqueCharacter
     {
         public int Solution(string s)
         {
