@@ -1,4 +1,5 @@
-﻿public static class BestTimeToBuyAndSellStock
+﻿//https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/1759601101/
+public static class BestTimeToBuyAndSellStock
 {
     public static int Solution(int[] prices)
     {
