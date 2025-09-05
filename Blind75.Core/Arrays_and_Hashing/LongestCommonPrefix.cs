@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿//https://leetcode.com/problems/longest-common-prefix/description/
 
 namespace Blind75.Core.Arrays_and_Hashing
 {
