@@ -1,31 +1,22 @@
 ﻿//https://leetcode.com/problems/longest-palindrome/submissions/1760095298/
-public static class LongestPalindrome
+public class LongestPalindrome
 {
-    public static int Solution(string s)
+    public int Solution(string s)
     {
-        Dictionary<char, int> collect = new Dictionary<char, int>();
-        int odd = 0;
-        int even = 0;
+        Dictionary<char, int> map = s.GroupBy(c => c).ToDictionary(x => x.Key, x => x.Count());
 
-        foreach (char a in s)
+        int length = 0;
+        bool hasOdd = false;
+
+        foreach (KeyValuePair<char, int> kvp in map)
         {
-            if (collect.ContainsKey(a))
-            {
-                collect[a]++;
-            }
-            else
-            {
-                collect.Add(a, 1);
-            }
+            int count = kvp.Value;
+            length += (count / 2) * 2;
+            if (count % 2 != 0) hasOdd = true;
         }
 
-        foreach (var record in collect)
-        {
-            even += record.Value / 2;
-            if (odd == 0) odd = record.Value % 2;
-        }
+        if (hasOdd) length++;
 
-        return odd + even * 2;
-
+        return length;
     }
 }
