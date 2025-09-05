@@ -1,4 +1,5 @@
-﻿public static class SolutLongestPalindromeion
+﻿//https://leetcode.com/problems/longest-palindrome/submissions/1760095298/
+public static class LongestPalindrome
 {
     public static int Solution(string s)
     {
