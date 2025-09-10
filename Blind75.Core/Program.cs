@@ -7,6 +7,6 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        BinarySearch.Solution([1,2,3,4,5], 5);
+        LengthOfLongestSubstring.Solution("pwwkew");
     }
 }
